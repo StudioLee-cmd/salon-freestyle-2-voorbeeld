@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BloomBeauty Voorbeeld — Schoonheidssalon Rotterdam</title>
+  <meta name="description" content="BloomBeauty Voorbeeld is een moderne schoonheidssalon in Rotterdam. Natuurlijke schoonheidsbehandelingen, huidverzorging en wellness in een warme setting.">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="header" id="header">
+  <div class="container">
+    <a href="index.html" class="logo">Bloom<span>Beauty</span></a>
+    <nav class="nav" id="nav">
+      <a href="#diensten">Behandelingen</a>
+      <a href="#over-ons">Over Ons</a>
+      <a href="#galerij">Galerij</a>
+      <a href="#faq">FAQ</a>
+      <a href="blog.html">Blog</a>
+      <a href="#contact" class="nav-cta">Boek Nu</a>
+    </nav>
+    <div class="nav-toggle" id="navToggle" aria-label="Menu openen">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-content reveal-left">
+        <div class="hero-badge">
+          <i data-lucide="flower-2" style="width:14px;height:14px;"></i>
+          Schoonheidssalon Rotterdam
+        </div>
+        <h1>Natuurlijke Schoonheid, <em>Professioneel</em> Verzorgd</h1>
+        <p>Bij BloomBeauty geloven wij in de kracht van natuurlijke ingredienten en persoonlijke aandacht. Onze behandelingen zijn afgestemd op jouw unieke huid en wensen. Ontdek het verschil.</p>
+        <div class="hero-btns">
+          <a href="#contact" class="btn-primary">
+            <i data-lucide="calendar" style="width:18px;height:18px;"></i>
+            Maak een Afspraak
+          </a>
+          <a href="#diensten" class="btn-outline">
+            <i data-lucide="sparkles" style="width:18px;height:18px;"></i>
+            Onze Behandelingen
+          </a>
+        </div>
+      </div>
+      <div class="hero-image reveal-right" style="position:relative;">
+        <img src="images/hero.jpg" alt="BloomBeauty salon — natuurlijke schoonheidsbehandelingen Rotterdam">
+        <div class="hero-float hero-float-1">
+          <div class="hero-float-icon"><i data-lucide="heart" style="width:18px;height:18px;"></i></div>
+          <div><strong>2.800+</strong><br><span style="font-size:0.75rem;color:var(--text-muted);">Blije klanten</span></div>
+        </div>
+        <div class="hero-float hero-float-2">
+          <div class="hero-float-icon"><i data-lucide="star" style="width:18px;height:18px;"></i></div>
+          <div><strong>4.9 / 5</strong><br><span style="font-size:0.75rem;color:var(--text-muted);">Google Reviews</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  <div class="ticker" style="background:var(--color-accent,#f5a623);padding:12px 0;overflow:hidden;">
+    <div style="display:flex;gap:48px;animation:tickerScroll 20s linear infinite;white-space:nowrap;">
+      <span><iconify-icon icon="lucide:sparkles"></iconify-icon> Gezicht</span><span><iconify-icon icon="lucide:hand"></iconify-icon> Massage</span><span><iconify-icon icon="lucide:palette"></iconify-icon> Nagels</span><span><iconify-icon icon="lucide:scissors"></iconify-icon> Waxing</span><span><iconify-icon icon="lucide:eye"></iconify-icon> Wimpers</span><span><iconify-icon icon="lucide:sun"></iconify-icon> Huidverbetering</span><span><iconify-icon icon="lucide:sparkles"></iconify-icon> Gezicht</span><span><iconify-icon icon="lucide:hand"></iconify-icon> Massage</span><span><iconify-icon icon="lucide:palette"></iconify-icon> Nagels</span><span><iconify-icon icon="lucide:scissors"></iconify-icon> Waxing</span><span><iconify-icon icon="lucide:eye"></iconify-icon> Wimpers</span><span><iconify-icon icon="lucide:sun"></iconify-icon> Huidverbetering</span>
+    </div>
+  </div>
+  <style>@keyframes tickerScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}</style>
+  <style>.ticker span{display:inline-flex;align-items:center;gap:8px;font-size:0.85rem;font-weight:700;color:var(--color-bg,#0a0a0f);text-transform:uppercase;letter-spacing:0.05em;}</style>
+
+
+<!-- ============ SCROLL VIDEO ============ -->
+<section class="scroll-video-section">
+  <div class="pin-wrap" id="scrollVideoPin">
+    <canvas id="scrollCanvas" width="1280" height="720"></canvas>
+    <div class="scroll-video-overlay">
+      <p><i data-lucide="mouse" style="width:14px;height:14px;display:inline;vertical-align:middle;margin-right:6px;"></i> Scroll om onze behandelingen te ontdekken</p>
+    </div>
+  </div>
+</section>
+
+
+  <!-- ======================== BEFORE / AFTER ======================== -->
+  <section class="ba-section" style="height:100vh;position:relative;overflow:hidden;background:#000;">
+    <div style="width:100%;height:100%;position:relative;">
+      <img src="images/craft.jpg" alt="Na" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;">
+      <img src="images/hero.jpg" alt="Voor" id="baBefore" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:2;">
+      <div id="baLabel" style="position:absolute;z-index:3;bottom:10%;left:50%;transform:translateX(-50%);text-align:center;opacity:0;">
+        <span style="display:inline-block;background:var(--color-accent,#C1FF72);color:#0a0a0a;padding:8px 20px;border-radius:99px;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:16px;">Scroll om te zien</span>
+        <h2 style="font-size:clamp(2rem,5vw,3.5rem);font-weight:900;line-height:1.15;color:#fff;text-shadow:0 4px 20px rgba(0,0,0,0.6);">Van oud naar <em style="color:var(--color-accent,#C1FF72);">nieuw</em></h2>
+      </div>
+    </div>
+  </section>
+<!-- ============ SERVICES ============ -->
+<section class="services section" id="diensten">
+  <div class="container">
+    <div class="reveal" style="text-align:center;">
+      <h2 class="section-title">Onze <span class="accent">Behandelingen</span></h2>
+      <p class="section-subtitle" style="margin-left:auto;margin-right:auto;">Met liefde samengesteld voor jouw huid. Natuurlijke producten, professionele handen, zichtbare resultaten.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal stagger-1">
+        <div class="service-icon"><i data-lucide="sparkles" style="width:24px;height:24px;"></i></div>
+        <h3>Signature Facial</h3>
+        <p>Onze meest populaire behandeling. Een op maat gemaakte gezichtsbehandeling met diepe reiniging, enzympeeling, hydraterend serum en een ontspannende gezichtsmassage.</p>
+        <div class="service-price">Vanaf &euro;89</div>
+      </div>
+      <div class="service-card reveal stagger-2">
+        <div class="service-icon"><i data-lucide="hand" style="width:24px;height:24px;"></i></div>
+        <h3>Huidtherapie</h3>
+        <p>Gerichte behandeling voor specifieke huidproblemen zoals acne, pigmentatie of rosacea. Met professionele apparatuur en resultaatgerichte producten.</p>
+        <div class="service-price">Vanaf &euro;115</div>
+      </div>
+      <div class="service-card reveal stagger-3">
+        <div class="service-icon"><i data-lucide="palette" style="width:24px;height:24px;"></i></div>
+        <h3>Glow Treatment</h3>
+        <p>Combinatiebehandeling voor een instant glow. Microdermabrasie gevolgd door een LED-lichttherapie sessie en een vitamin C booster masker.</p>
+        <div class="service-price">Vanaf &euro;105</div>
+      </div>
+      <div class="service-card reveal stagger-4">
+        <div class="service-icon"><i data-lucide="scissors" style="width:24px;height:24px;"></i></div>
+        <h3>Waxing Studio</h3>
+        <p>Zijdezachte huid met onze biologische suikerwax. Zacht voor de huid, langdurig resultaat. Voor gezicht en lichaam, inclusief nazorg advies.</p>
+        <div class="service-price">Vanaf &euro;20</div>
+      </div>
+      <div class="service-card reveal stagger-5">
+        <div class="service-icon"><i data-lucide="eye" style="width:24px;height:24px;"></i></div>
+        <h3>Brow &amp; Lash Bar</h3>
+        <p>Wenkbrauw threading, tinting, lash lift en wimperextensions. Geef jouw ogen de aandacht die ze verdienen met onze gespecialiseerde brow artists.</p>
+        <div class="service-price">Vanaf &euro;35</div>
+      </div>
+      <div class="service-card reveal stagger-6">
+        <div class="service-icon"><i data-lucide="sun" style="width:24px;height:24px;"></i></div>
+        <h3>Holistic Wellness</h3>
+        <p>Een compleet welzijnsritueel met hot stone massage, kruidenthee ceremonie en een rustgevend gezichtsmasker. Twee uur totale vernieuwing.</p>
+        <div class="service-price">Vanaf &euro;139</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATS ============ -->
+<section class="stats-section">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item reveal stagger-1">
+        <h3 id="stat1">0</h3>
+        <p>Blije Klanten</p>
+      </div>
+      <div class="stat-item reveal stagger-2">
+        <h3 id="stat2">0</h3>
+        <p>Jaar in Rotterdam</p>
+      </div>
+      <div class="stat-item reveal stagger-3">
+        <h3 id="stat3">0</h3>
+        <p>Behandelingen per Maand</p>
+      </div>
+      <div class="stat-item reveal stagger-4">
+        <h3 id="stat4">0</h3>
+        <p>Google Score</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="section" id="over-ons" style="background:var(--bg);">
+  <div class="container">
+    <div class="about-grid">
+      <div class="reveal-left" style="position:relative;">
+        <div class="about-img">
+          <img src="images/team.jpg" alt="Het BloomBeauty team in Rotterdam">
+        </div>
+        <div class="about-img-accent"></div>
+      </div>
+      <div class="reveal-right">
+        <h2 class="section-title">Waar Bloei <span class="accent">Begint</span></h2>
+        <p style="color:var(--text-muted);font-size:1rem;line-height:1.9;margin-bottom:16px;">BloomBeauty is geboren uit een passie voor natuurlijke schoonheid. In 2018 openden we onze deuren in het hart van Rotterdam met een duidelijke missie: eerlijke, resultaatgerichte huidverzorging zonder compromissen.</p>
+        <p style="color:var(--text-muted);font-size:1rem;line-height:1.9;margin-bottom:24px;">Ons team van vier gediplomeerde schoonheidsspecialisten werkt uitsluitend met biologische en dierproefvrije producten. Wij nemen de tijd voor iedere klant — geen haastwerk, maar echte aandacht voor jouw huid en welzijn.</p>
+        <div class="about-tags">
+          <span class="about-tag"><i data-lucide="leaf" style="width:14px;height:14px;"></i> Biologische Producten</span>
+          <span class="about-tag"><i data-lucide="heart" style="width:14px;height:14px;"></i> Dierproefvrij</span>
+          <span class="about-tag"><i data-lucide="award" style="width:14px;height:14px;"></i> CIDESCO Certified</span>
+          <span class="about-tag"><i data-lucide="shield-check" style="width:14px;height:14px;"></i> Hypoallergeen</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="testimonials section" id="reviews">
+  <div class="container">
+    <div class="reveal" style="text-align:center;">
+      <h2 class="section-title">Klanten aan het <span class="accent">Woord</span></h2>
+      <p class="section-subtitle" style="margin-left:auto;margin-right:auto;">Ontdek waarom meer dan 2.800 vrouwen en mannen in Rotterdam kiezen voor BloomBeauty.</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal stagger-1">
+        <div class="testimonial-stars">
+          <i data-lucide="star" style="width:15px;height:15px;fill:var(--pink-dark);"></i>
+          <i data-lucide="star" style="width:15px;height:15px;fill:var(--pink-dark);"></i>
+          <i data-lucide="star" style="width:15px;height:15px;fill:var(--pink-dark);"></i>
+          <i data-lucide="star" style="width:15px;height:15px;fill:var(--pink-dark);"></i>
+          <i data-lucide="star" style="width:15px;height:15px;fill:var(--pink-dark);"></i>
+        </div>
+        <blockquote>"Eindelijk een salon die luistert naar wat mijn huid nodig heeft in plaats van standaard producten aan te smeren. Na drie maanden is mijn acne bijna volledig verdwenen. Ongelooflijk dankbaar!"</blockquote>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">EK</div>
+          <div>
+            <strong>Emma de Koning</strong><br>
+            <span>Huidtherapie klant</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal stagger-2">
+        <div class="testimonial-stars">
+          <i data-lucide="star" style="width:15px;height:15px;fill:var(--pink-dark);"></i>
+          <i data-lucide="star" style="width:15px;height:15px;fill:var(--pink-dark);"></i>
+          <i data-lucide="star" style="width:15px;height:15px;fill:var(--pink-dark);"></i>
+          <i data-lucide="star" style="width:15px;height:15px;fill:var(--pink-dark);"></i>
+          <i data-lucide="star" style="width:15px;height:15px;fill:var(--pink-dark);"></i>
+        </div>
+        <blockquote>"De sfeer bij BloomBeauty is zo rustgevend. Vanaf het moment dat je binnenkomt voel je de stress wegsmelten. Het wellness ritueel is echt een ervaring die ik iedereen gun. Pure verwennerij!"</blockquote>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">NB</div>
+          <div>
+            <strong>Noor Bakker</strong><br>
+            <span>Wellness ritueel liefhebber</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal stagger-3">
+        <div class="testimonial-stars">
+          <i data-lucide="star" style="width:15px;height:15px;fill:var(--pink-dark);"></i>
+          <i data-lucide="star" style="width:15px;height:15px;fill:var(--pink-dark);"></i>
+          <i data-lucide="star" style="width:15px;height:15px;fill:var(--pink-dark);"></i>
+          <i data-lucide="star" style="width:15px;height:15px;fill:var(--pink-dark);"></i>
+          <i data-lucide="star" style="width:15px;height:15px;fill:var(--pink-dark);"></i>
+        </div>
+        <blockquote>"Ik heb overal in Rotterdam gezocht naar goede wimperextensions en dit is veruit de beste. Zo natuurlijk, zo licht — je voelt ze niet eens. En ze gaan weken mee. Heel blij mee!"</blockquote>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">FH</div>
+          <div>
+            <strong>Fatima Hadid</strong><br>
+            <span>Lash lift & extensions</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section class="gallery section" id="galerij">
+  <div class="container">
+    <div class="reveal" style="text-align:center;">
+      <h2 class="section-title">Een Kijkje bij <span class="accent">BloomBeauty</span></h2>
+      <p class="section-subtitle" style="margin-left:auto;margin-right:auto;">Onze salon, ons team en de resultaten die wij voor onze klanten bereiken.</p>
+    </div>
+    <div class="gallery-masonry reveal">
+      <div class="gallery-item"><img src="images/hero.jpg" alt="BloomBeauty salon interieur" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/detail.jpg" alt="Huidverzorging detail" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/craft.jpg" alt="Behandeling in uitvoering" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/project1.jpg" alt="Gezichtsbehandeling resultaat" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/about.jpg" alt="Over ons team" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/kitchen.jpg" alt="Salon werkruimte" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/project2.jpg" alt="Productlijn" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/team.jpg" alt="Ons team" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/carousel.jpg" alt="Ontspanning" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/cta-bg.jpg" alt="Salon sfeer" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="faq section" id="faq">
+  <div class="container">
+    <div class="reveal" style="text-align:center;">
+      <h2 class="section-title">Veelgestelde <span class="accent">Vragen</span></h2>
+      <p class="section-subtitle" style="margin-left:auto;margin-right:auto;">Hier vind je antwoorden op de meest gestelde vragen over onze behandelingen.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <div class="faq-question">
+          <h3>Gebruiken jullie echt alleen biologische producten?</h3>
+          <i data-lucide="plus" class="faq-icon" style="width:18px;height:18px;"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Ja, wij werken uitsluitend met gecertificeerd biologische en dierproefvrije producten. Onze hoofdmerken zijn Tata Harper, Pai Skincare en Odacite. Alle producten zijn vrij van synthetische geurstoffen, parabenen en sulfaten.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-question">
+          <h3>Hoe lang van tevoren moet ik een afspraak maken?</h3>
+          <i data-lucide="plus" class="faq-icon" style="width:18px;height:18px;"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Wij raden aan om minimaal 3-5 dagen van tevoren te boeken, vooral voor weekenddagen. Via ons online systeem kun je 24/7 beschikbaarheid zien. Last-minute afspraken zijn soms mogelijk — bel ons even voor actuele beschikbaarheid.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-question">
+          <h3>Is de Glow Treatment geschikt voor gevoelige huid?</h3>
+          <i data-lucide="plus" class="faq-icon" style="width:18px;height:18px;"></i>
+        </div>
+        <div class="faq-answer">
+          <p>De Glow Treatment passen wij altijd aan op jouw huidtype. Bij gevoelige huid gebruiken we een mildere peeling en stellen we de LED-therapie anders in. Tijdens de intake bespreken we jouw huidconditie uitgebreid.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-question">
+          <h3>Bieden jullie ook pakketten of abonnementen aan?</h3>
+          <i data-lucide="plus" class="faq-icon" style="width:18px;height:18px;"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Jazeker! Wij hebben een Bloom Membership voor vaste klanten. Je ontvangt maandelijks een behandeling naar keuze, 15% korting op producten en exclusieve uitnodigingen voor workshops. Vraag ons team naar de mogelijkheden.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-question">
+          <h3>Waar kan ik parkeren in de buurt van de salon?</h3>
+          <i data-lucide="plus" class="faq-icon" style="width:18px;height:18px;"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Er is betaald parkeren direct voor de deur op de Witte de Withstraat. Parkeergarage Museumpark is op 3 minuten lopen. Met het OV: metrostation Beurs is op 5 minuten loopafstand. Wij vergoeden een uur parkeerkosten bij behandelingen boven de 100 euro.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="cta-section" id="contact">
+  <div class="cta-bg"></div>
+  <div class="cta-overlay"></div>
+  <div class="container">
+    <div class="reveal">
+      <h2>Laat Jouw Schoonheid <span style="color:var(--pink-light);">Bloeien</span></h2>
+      <p>Plan vandaag nog een vrijblijvende huidanalyse en ontdek welke behandelingen het beste bij jou passen.</p>
+      <a href="#" class="btn-primary" style="background:white;color:var(--pink-dark);margin:0 auto;">
+        <i data-lucide="calendar" style="width:18px;height:18px;"></i>
+        Boek Gratis Huidanalyse
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">Bloom<span>Beauty</span></a>
+        <p>Natuurlijke schoonheidsbehandelingen in het hart van Rotterdam. Biologische producten, persoonlijke aandacht, zichtbare resultaten.</p>
+        <div style="display:flex;gap:12px;margin-top:20px;">
+          <a href="#" style="width:36px;height:36px;background:rgba(255,255,255,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--pink-light);"><i data-lucide="instagram" style="width:16px;height:16px;"></i></a>
+          <a href="#" style="width:36px;height:36px;background:rgba(255,255,255,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--pink-light);"><i data-lucide="facebook" style="width:16px;height:16px;"></i></a>
+          <a href="#" style="width:36px;height:36px;background:rgba(255,255,255,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--pink-light);"><i data-lucide="phone" style="width:16px;height:16px;"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4>Behandelingen</h4>
+        <ul>
+          <li><a href="#diensten">Signature Facial</a></li>
+          <li><a href="#diensten">Huidtherapie</a></li>
+          <li><a href="#diensten">Glow Treatment</a></li>
+          <li><a href="#diensten">Waxing Studio</a></li>
+          <li><a href="#diensten">Brow & Lash Bar</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Informatie</h4>
+        <ul>
+          <li><a href="#over-ons">Over Ons</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#">Privacy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="#"><i data-lucide="map-pin" style="width:14px;height:14px;display:inline;vertical-align:middle;margin-right:6px;"></i>Witte de Withstraat 42, Rotterdam</a></li>
+          <li><a href="tel:0101234567"><i data-lucide="phone" style="width:14px;height:14px;display:inline;vertical-align:middle;margin-right:6px;"></i>010-123 4567</a></li>
+          <li><a href="mailto:info@bloombeauty.nl"><i data-lucide="mail" style="width:14px;height:14px;display:inline;vertical-align:middle;margin-right:6px;"></i>info@bloombeauty.nl</a></li>
+          <li><a href="#"><i data-lucide="clock" style="width:14px;height:14px;display:inline;vertical-align:middle;margin-right:6px;"></i>Di-Za: 9:30 - 18:00</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 BloomBeauty Voorbeeld. Alle rechten voorbehouden.</p>
+      <p>Website door <a href="https://www.studiolee.nl" target="_blank" rel="noopener" style="color:var(--pink-light);">StudioLee</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ STUDIOLEE BADGE ============ -->
+<a href="https://www.studiolee.nl/schoonheidssalons" class="studiolee-badge" target="_blank" rel="noopener">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+  Website door StudioLee
+</a>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  lucide.createIcons();
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Header scroll
+  const header = document.getElementById('header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  // Mobile nav
+  const navToggle = document.getElementById('navToggle');
+  const nav = document.getElementById('nav');
+  navToggle.addEventListener('click', () => nav.classList.toggle('open'));
+  nav.querySelectorAll('a').forEach(l => l.addEventListener('click', () => nav.classList.remove('open')));
+
+  // Scroll reveals
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
+    ScrollTrigger.create({
+      trigger: el,
+      start: 'top 85%',
+      onEnter: () => el.classList.add('active'),
+    });
+  });
+
+  // Scroll Video Canvas — 121 frames
+  const canvas = document.getElementById('scrollCanvas');
+  const ctx = canvas.getContext('2d');
+  const frameCount = 121;
+  const getFrameSrc = i => 'images/frames/frame-' + String(i).padStart(3, '0') + '.jpg';
+  const images = [];
+  let loadedCount = 0;
+
+  for (let i = 0; i < frameCount; i++) {
+    const img = new Image();
+    img.src = currentFrame(i);
+    img.onload = () => { loadedCount++; if (loadedCount === 1) renderFrame(0); };
+    images.push(img);
+  }
+
+  function renderFrame(index) {
+    if (!images[index] || !images[index].complete) return;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    const hR = canvas.width / images[index].width;
+    const vR = canvas.height / images[index].height;
+    const r = Math.max(hR, vR);
+    const cx = (canvas.width - images[index].width * r) / 2;
+    const cy = (canvas.height - images[index].height * r) / 2;
+    ctx.drawImage(images[index], 0, 0, images[index].width, images[index].height, cx, cy, images[index].width * r, images[index].height * r);
+  }
+
+  // Fallback
+  const fallbackImg = new Image();
+  fallbackImg.src = 'images/about.jpg';
+  fallbackImg.onload = () => {
+    if (loadedCount === 0) {
+      const hR = canvas.width / fallbackImg.width;
+      const vR = canvas.height / fallbackImg.height;
+      const r = Math.max(hR, vR);
+      ctx.drawImage(fallbackImg, 0, 0, fallbackImg.width, fallbackImg.height,
+        (canvas.width - fallbackImg.width * r) / 2,
+        (canvas.height - fallbackImg.height * r) / 2,
+        fallbackImg.width * r, fallbackImg.height * r);
+    }
+  };
+
+  const frameAnim = { frame: 0 };
+  gsap.to(frameAnim, {
+    frame: frameCount - 1,
+    snap: 'frame',
+    ease: 'none',
+    scrollTrigger: {
+      trigger: '.scroll-video-section',
+      pin: true,
+      scrub: 1,
+      end: '+=600%',
+    },
+    onUpdate: () => renderFrame(Math.round(frameAnim.frame)),
+  });
+
+  // Counter animations
+  function animateCounter(id, target, suffix = '') {
+    const el = document.getElementById(id);
+    if (!el) return;
+    ScrollTrigger.create({
+      trigger: el,
+      start: 'top 85%',
+      onEnter: () => {
+        gsap.to({ val: 0 }, {
+          val: target, duration: 2.2, ease: 'power2.out',
+          onUpdate: function() {
+            el.textContent = Math.round(this.targets()[0].val).toLocaleString('nl-NL') + suffix;
+          }
+        });
+      },
+      once: true
+    });
+  }
+  animateCounter('stat1', 2800, '+');
+  animateCounter('stat2', 8, '');
+  animateCounter('stat3', 520, '+');
+  animateCounter('stat4', 4.9, '');
+
+  // FAQ
+  document.querySelectorAll('.faq-question').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.parentElement;
+      const wasActive = item.classList.contains('active');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+      if (!wasActive) item.classList.add('active');
+    });
+  });
+
+  // GSAP service cards float animation
+  gsap.utils.toArray('.service-card').forEach((card, i) => {
+    gsap.from(card, {
+      y: 60,
+      opacity: 0,
+      duration: 0.7,
+      delay: i * 0.1,
+      scrollTrigger: {
+        trigger: card,
+        start: 'top 85%',
+      }
+    });
+  });
+
+  // Gallery items entrance
+  gsap.utils.toArray('.gallery-item').forEach((item, i) => {
+    gsap.from(item, {
+      scale: 0.8,
+      opacity: 0,
+      duration: 0.5,
+      delay: i * 0.06,
+      scrollTrigger: {
+        trigger: '.gallery-masonry',
+        start: 'top 75%',
+      }
+    });
+  });
+
+  // Testimonials stagger
+  gsap.from('.testimonial-card', {
+    y: 50, opacity: 0, stagger: 0.15, duration: 0.7,
+    scrollTrigger: { trigger: '.testimonials-grid', start: 'top 80%' }
+  });
+
+  // Hero floating cards animation
+  gsap.from('.hero-float-1', {
+    x: -30, opacity: 0, duration: 1, delay: 0.8, ease: 'power3.out'
+  });
+  gsap.from('.hero-float-2', {
+    x: 30, opacity: 0, duration: 1, delay: 1, ease: 'power3.out'
+  });
+  // Floating animation
+  gsap.to('.hero-float-1', { y: -8, repeat: -1, yoyo: true, duration: 2.5, ease: 'sine.inOut' });
+  gsap.to('.hero-float-2', { y: 8, repeat: -1, yoyo: true, duration: 3, ease: 'sine.inOut' });
+
+  // Stat number pulse
+  gsap.to('.stat-item h3', {
+    scale: 1.04, repeat: -1, yoyo: true, duration: 1.5, ease: 'sine.inOut',
+    stagger: 0.2
+  });
+
+  // CTA parallax
+  gsap.to('.cta-bg', {
+    yPercent: 20, ease: 'none',
+    scrollTrigger: { trigger: '.cta-section', start: 'top bottom', end: 'bottom top', scrub: true }
+  });
+});
+</script>
+
+
+    // Before/After slider
+    (function() {
+      var before = document.getElementById('baBefore');
+      var label = document.getElementById('baLabel');
+      if (!before || typeof gsap === 'undefined') return;
+      gsap.registerPlugin(ScrollTrigger);
+      var tl = gsap.timeline({
+        scrollTrigger: { trigger: '.ba-section', start: 'top top', end: '+=200%', pin: true, scrub: 0.5, anticipatePin: 1 }
+      });
+      tl.fromTo(before, { clipPath: 'inset(0 0 0 0)' }, { clipPath: 'inset(0 100% 0 0)', duration: 1, ease: 'none' });
+      tl.fromTo(label, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' }, 0.5);
+    })();
+
+</body>
+</html>

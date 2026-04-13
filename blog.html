@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — BloomBeauty Voorbeeld | Schoonheidssalon Rotterdam</title>
+  <meta name="description" content="Lees onze blog over natuurlijke huidverzorging, wellness tips en de nieuwste schoonheidstrends. Door de experts van BloomBeauty Rotterdam.">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="header" id="header">
+  <div class="container">
+    <a href="index.html" class="logo">Bloom<span>Beauty</span></a>
+    <nav class="nav" id="nav">
+      <a href="index.html#diensten">Behandelingen</a>
+      <a href="index.html#over-ons">Over Ons</a>
+      <a href="index.html#galerij">Galerij</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="blog.html" style="color:var(--pink-dark);">Blog</a>
+      <a href="index.html#contact" class="nav-cta">Boek Nu</a>
+    </nav>
+    <div class="nav-toggle" id="navToggle" aria-label="Menu openen">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</header>
+
+<!-- ============ BLOG HERO ============ -->
+<section class="blog-hero">
+  <div class="container">
+    <div class="reveal">
+      <div style="display:inline-flex;align-items:center;gap:8px;color:var(--pink-dark);font-size:0.8rem;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:16px;">
+        <i data-lucide="feather" style="width:16px;height:16px;"></i>
+        BloomBeauty Journal
+      </div>
+      <h1>Schoonheid <span class="accent">Ontdekken</span></h1>
+      <p>Inspiratie, tips en kennis voor een stralende huid en een gezonde levensstijl.</p>
+    </div>
+    <div class="blog-categories reveal">
+      <span class="blog-cat active">Alles</span>
+      <span class="blog-cat">Huidverzorging</span>
+      <span class="blog-cat">Wellness</span>
+      <span class="blog-cat">Trends</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BLOG GRID ============ -->
+<section class="section" style="background:var(--bg);padding-top:0;">
+  <div class="container">
+    <div class="blog-grid">
+
+      <!-- Article 1 -->
+      <article class="blog-card reveal stagger-1">
+        <div class="blog-card-img">
+          <img src="images/craft.jpg" alt="Biologische huidverzorging ingredienten" loading="lazy">
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span class="blog-tag">Huidverzorging</span>
+            <span><i data-lucide="calendar" style="width:12px;height:12px;display:inline;vertical-align:middle;margin-right:4px;"></i>10 april 2026</span>
+          </div>
+          <h3>5 Biologische Ingredienten Die Jouw Huid Transformeren</h3>
+          <p>Van rosehip olie tot bakuchiol: ontdek welke natuurlijke ingredienten wetenschappelijk bewezen effectief zijn voor anti-aging, hydratatie en een egale teint.</p>
+          <a href="#" class="blog-read-more">
+            Lees meer <i data-lucide="arrow-right" style="width:14px;height:14px;"></i>
+          </a>
+        </div>
+      </article>
+
+      <!-- Article 2 -->
+      <article class="blog-card reveal stagger-2">
+        <div class="blog-card-img">
+          <img src="images/carousel.jpg" alt="Wellness routine thuis" loading="lazy">
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span class="blog-tag">Wellness</span>
+            <span><i data-lucide="calendar" style="width:12px;height:12px;display:inline;vertical-align:middle;margin-right:4px;"></i>5 april 2026</span>
+          </div>
+          <h3>Jouw Spa-Avond Thuis: Een Complete Wellness Gids</h3>
+          <p>Je hoeft niet altijd naar de salon om je verwend te voelen. Met deze stap-voor-stap gids creeer je een luxe spa-ervaring in je eigen badkamer.</p>
+          <a href="#" class="blog-read-more">
+            Lees meer <i data-lucide="arrow-right" style="width:14px;height:14px;"></i>
+          </a>
+        </div>
+      </article>
+
+      <!-- Article 3 -->
+      <article class="blog-card reveal stagger-3">
+        <div class="blog-card-img">
+          <img src="images/project2.jpg" alt="Skinimalisme trend 2026" loading="lazy">
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span class="blog-tag">Trends</span>
+            <span><i data-lucide="calendar" style="width:12px;height:12px;display:inline;vertical-align:middle;margin-right:4px;"></i>30 maart 2026</span>
+          </div>
+          <h3>Skinimalisme: Waarom Minder Producten Meer Doen</h3>
+          <p>De trend van minder is meer bereikt ook de huidverzorging. Ontdek hoe een minimalistischere routine juist tot betere resultaten kan leiden voor jouw huid.</p>
+          <a href="#" class="blog-read-more">
+            Lees meer <i data-lucide="arrow-right" style="width:14px;height:14px;"></i>
+          </a>
+        </div>
+      </article>
+
+      <!-- Article 4 -->
+      <article class="blog-card reveal stagger-4">
+        <div class="blog-card-img">
+          <img src="images/team.jpg" alt="Huid en seizoenen" loading="lazy">
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span class="blog-tag">Huidverzorging</span>
+            <span><i data-lucide="calendar" style="width:12px;height:12px;display:inline;vertical-align:middle;margin-right:4px;"></i>24 maart 2026</span>
+          </div>
+          <h3>Hoe Je Huidverzorging Aanpast per Seizoen</h3>
+          <p>Jouw huid heeft in de winter andere behoeften dan in de zomer. Onze huidtherapeuten leggen uit hoe je jouw routine seizoensbestendig maakt voor het beste resultaat.</p>
+          <a href="#" class="blog-read-more">
+            Lees meer <i data-lucide="arrow-right" style="width:14px;height:14px;"></i>
+          </a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ NEWSLETTER CTA ============ -->
+<section class="cta-section">
+  <div class="cta-bg"></div>
+  <div class="cta-overlay"></div>
+  <div class="container">
+    <div class="reveal">
+      <h2>Wil je Meer <span style="color:var(--pink-light);">Beauty Tips</span>?</h2>
+      <p>Volg ons op Instagram voor dagelijkse inspiratie of boek een vrijblijvende huidanalyse bij onze salon.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href="index.html#contact" class="btn-primary" style="background:white;color:var(--pink-dark);">
+          <i data-lucide="calendar" style="width:18px;height:18px;"></i>
+          Gratis Huidanalyse
+        </a>
+        <a href="#" class="btn-outline" style="border-color:white;color:white;">
+          <i data-lucide="instagram" style="width:18px;height:18px;"></i>
+          Volg op Instagram
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">Bloom<span>Beauty</span></a>
+        <p>Natuurlijke schoonheidsbehandelingen in het hart van Rotterdam. Biologische producten, persoonlijke aandacht, zichtbare resultaten.</p>
+        <div style="display:flex;gap:12px;margin-top:20px;">
+          <a href="#" style="width:36px;height:36px;background:rgba(255,255,255,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--pink-light);"><i data-lucide="instagram" style="width:16px;height:16px;"></i></a>
+          <a href="#" style="width:36px;height:36px;background:rgba(255,255,255,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--pink-light);"><i data-lucide="facebook" style="width:16px;height:16px;"></i></a>
+          <a href="#" style="width:36px;height:36px;background:rgba(255,255,255,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--pink-light);"><i data-lucide="phone" style="width:16px;height:16px;"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4>Behandelingen</h4>
+        <ul>
+          <li><a href="index.html#diensten">Signature Facial</a></li>
+          <li><a href="index.html#diensten">Huidtherapie</a></li>
+          <li><a href="index.html#diensten">Glow Treatment</a></li>
+          <li><a href="index.html#diensten">Waxing Studio</a></li>
+          <li><a href="index.html#diensten">Brow & Lash Bar</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Informatie</h4>
+        <ul>
+          <li><a href="index.html#over-ons">Over Ons</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+          <li><a href="index.html#reviews">Reviews</a></li>
+          <li><a href="#">Privacy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="#"><i data-lucide="map-pin" style="width:14px;height:14px;display:inline;vertical-align:middle;margin-right:6px;"></i>Witte de Withstraat 42, Rotterdam</a></li>
+          <li><a href="tel:0101234567"><i data-lucide="phone" style="width:14px;height:14px;display:inline;vertical-align:middle;margin-right:6px;"></i>010-123 4567</a></li>
+          <li><a href="mailto:info@bloombeauty.nl"><i data-lucide="mail" style="width:14px;height:14px;display:inline;vertical-align:middle;margin-right:6px;"></i>info@bloombeauty.nl</a></li>
+          <li><a href="#"><i data-lucide="clock" style="width:14px;height:14px;display:inline;vertical-align:middle;margin-right:6px;"></i>Di-Za: 9:30 - 18:00</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 BloomBeauty Voorbeeld. Alle rechten voorbehouden.</p>
+      <p>Website door <a href="https://www.studiolee.nl" target="_blank" rel="noopener" style="color:var(--pink-light);">StudioLee</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ STUDIOLEE BADGE ============ -->
+<a href="https://www.studiolee.nl/schoonheidssalons" class="studiolee-badge" target="_blank" rel="noopener">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+  Website door StudioLee
+</a>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  lucide.createIcons();
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Header
+  const header = document.getElementById('header');
+  window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 60));
+
+  // Mobile nav
+  const navToggle = document.getElementById('navToggle');
+  const nav = document.getElementById('nav');
+  navToggle.addEventListener('click', () => nav.classList.toggle('open'));
+  nav.querySelectorAll('a').forEach(l => l.addEventListener('click', () => nav.classList.remove('open')));
+
+  // Reveals
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
+    ScrollTrigger.create({
+      trigger: el,
+      start: 'top 85%',
+      onEnter: () => el.classList.add('active'),
+    });
+  });
+
+  // Blog cards stagger
+  gsap.from('.blog-card', {
+    y: 60, opacity: 0, stagger: 0.12, duration: 0.7, ease: 'power3.out',
+    scrollTrigger: { trigger: '.blog-grid', start: 'top 80%' }
+  });
+
+  // Blog card hover
+  document.querySelectorAll('.blog-card').forEach(card => {
+    card.addEventListener('mouseenter', () => gsap.to(card, { y: -8, duration: 0.3 }));
+    card.addEventListener('mouseleave', () => gsap.to(card, { y: 0, duration: 0.3 }));
+  });
+
+  // Category filter
+  document.querySelectorAll('.blog-cat').forEach(cat => {
+    cat.addEventListener('click', () => {
+      document.querySelectorAll('.blog-cat').forEach(c => c.classList.remove('active'));
+      cat.classList.add('active');
+    });
+  });
+
+  // CTA parallax
+  gsap.to('.cta-bg', {
+    yPercent: 20, ease: 'none',
+    scrollTrigger: { trigger: '.cta-section', start: 'top bottom', end: 'bottom top', scrub: true }
+  });
+});
+</script>
+
+</body>
+</html>
